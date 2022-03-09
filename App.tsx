@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';;
 
-import Home from './src/screens/Home';
+import HomeScreen from './src/screens/HomeScreen';
 
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -19,7 +19,7 @@ function App() {
         <Stack.Group>
           <Stack.Screen 
             name='Home'
-            component={Home}
+            component={HomeScreen}
           />
         </Stack.Group>
       </Stack.Navigator>

@@ -21,6 +21,9 @@
       "bundleIdentifier": "com.2-out-of-10.app",
       "config": {
         "googleMapsApiKey": ""
+      },
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app uses your location for finding restrooms in your area."
       }
     },
     "android": {

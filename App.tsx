@@ -15,11 +15,17 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName='Home'
+        screenOptions={{
+          headerShown: false,
+        }}
       >
         <Stack.Group>
           <Stack.Screen 
             name='Home'
             component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
           />
         </Stack.Group>
       </Stack.Navigator>

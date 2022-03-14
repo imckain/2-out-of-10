@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-// @ts-ignore
-import { API_KEY } from 'react-native-dotenv';
+
+import getLocation from '../hooks/getLocation';
 
 const HomeScreen = () => {
+  const [ region, setRegion ] = useState({});
+  const [location, locationError] = getLocation();
+
+  // setRegion(location);
+  console.log(location);
 
   return (
     <View style={styles.mapView}>
-      <Text>balls</Text>
       <MapView 
         style={styles.map} 
-        provider={PROVIDER_GOOGLE}
+        provider={undefined}
+        region={{
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          latitudeDelta: 0.02,
+          longitudeDelta: 0.02,
+        }}
+        followsUserLocation={true}
+        showsUserLocation={true}
+        userLocationAnnotationTitle={'My location'}
+        userLocationCalloutEnabled={true}
       />
     </View>
   )
